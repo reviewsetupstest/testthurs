@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: No-op step
-          command: echo "This is a trivial change to trigger the pipeline."
+          name: Small Change
+          command: echo "This is a small change to trigger the pipeline."
 workflows:
   version: 2
   build_and_deploy:
