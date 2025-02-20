@@ -5,21 +5,15 @@ executors:
       - image: cimg/base:stable
     working_directory: ~/project
 jobs:
-  build:
+  hello-world:
     executor: default-executor
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: sudo apt-get update && sudo apt-get install -y your-dependencies
-      - run:
-          name: Build Project
-          command: make build
-      - run:
-          name: Run Tests
-          command: make test
+          name: Print Hello World
+          command: echo "Hello, World!"
 workflows:
   version: 2
-  build_and_test:
+  hello_world_workflow:
     jobs:
-      - build
+      - hello-world
